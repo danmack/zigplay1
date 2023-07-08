@@ -1,3 +1,5 @@
+// from youtube @CallousCoder
+
 const std = @import("std");
 const stdout = std.io.getStdOut().writer();
 const heap_alloc = std.heap.page_allocator;
@@ -37,7 +39,6 @@ fn count_it(id: u32, list: *std.ArrayList(u8)) !void {
         }
     }
 }
-
 
 fn print_list(list: *std.ArrayList(u8)) !void {
     var iter = std.mem.split(u8, list.items, "\n");

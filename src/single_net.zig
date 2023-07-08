@@ -1,3 +1,5 @@
+// from youtube's @CallousCoder
+
 const std = @import("std");
 const stdout = std.io.getStdOut().writer();
 const net = std.net;
@@ -13,8 +15,6 @@ pub fn main() !void {
         } else {
             try biglist.writer().print("{d}\n|", .{index});
         }
-
-
     }
 
     var server = net.StreamServer.init(.{});
@@ -28,7 +28,6 @@ pub fn main() !void {
         _ = try std.Thread.spawn( .{}, print_list, .{&biglist, conn});
     }
 }
-
 
 fn print_list(list: *std.ArrayList(u8), conn: net.StreamServer.Connection) !void {
     var iter = std.mem.split(u8, list.items, "|");

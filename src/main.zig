@@ -1,3 +1,5 @@
+// from youtube @CalloutCoder video
+
 const std = @import("std");
 const stdout = std.io.getStdOut().writer();
 
@@ -12,8 +14,6 @@ pub fn main() !void {
         } else {
             try biglist.writer().print("{d}\n", .{index});
         }
-
-
     }
 
     try print_list(&biglist);
